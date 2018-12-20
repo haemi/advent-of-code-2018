@@ -67,13 +67,13 @@ while True:
     if temp_min_width * temp_min_height < min_area:
         iterations_without_new_min = 0
         min_area = temp_min_width * temp_min_height
-        min_dots = copy.deepcopy(dots)
+        min_dots = set(map(lambda x: (x.x, x.y), dots))
     else:
         iterations_without_new_min += 1
 
 
-y_values = list(map(lambda x: x.y, min_dots))
-x_values = list(map(lambda x: x.x, min_dots))
+y_values = list(map(lambda x: x[0], min_dots))
+x_values = list(map(lambda x: x[1], min_dots))
 
 # plt.plot(x_values, y_values, 'ro')
 # plt.show()
