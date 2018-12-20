@@ -1,6 +1,5 @@
 import os 
 import time
-from collections import deque
 
 
 start = time.time()
