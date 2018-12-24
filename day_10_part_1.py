@@ -47,16 +47,14 @@ iterations_without_new_min = 0
 i = 0
 
 while True:
-    max_x = max_y = 0
-    min_x = min_y = 999999
     i += 1
 
-    for dot in dots:
-        dot.advance()
-        min_x = min(min_x, dot.x)
-        max_x = max(max_x, dot.x)
-        min_y = min(min_y, dot.y)
-        max_y = max(max_y, dot.y)
+    [dot.advance() for dot in dots]
+
+    min_x = min(map(lambda dot: dot.x, dots))
+    max_x = max(map(lambda dot: dot.x, dots))
+    min_y = min(map(lambda dot: dot.y, dots))
+    max_y = max(map(lambda dot: dot.y, dots))
 
     temp_min_width = abs(max_x - min_x)
     temp_min_height = abs(max_y - min_y)
