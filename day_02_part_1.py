@@ -14,10 +14,11 @@ for word in lines_2:
     found_dreier = False
 
     for character in ascii_lowercase:
-        if word.count(character) == 2 and not found_zweier:
+        count = word.count(character)
+        if count == 2 and not found_zweier:
             found_zweier = True
             zweier += 1
-        elif word.count(character) == 3 and not found_dreier:
+        elif count == 3 and not found_dreier:
             found_dreier = True
             dreier += 1
 

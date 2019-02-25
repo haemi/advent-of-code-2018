@@ -4,7 +4,7 @@ import time
 
 start = time.time()
 
-for day in range(1, 14):
+for day in range(1, 15):
     day_string = 'day_{:02d}'.format(day)
     print(day_string)
     os.system('python3 {}_part_1.py'.format(day_string))
